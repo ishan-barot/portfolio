@@ -51,7 +51,7 @@ export function About() {
               outside of class, i&apos;m a co-op student at <span className="text-foreground">ontario power
               generation</span> working on the cybersecurity & applied math side, and i still pick up
               telemetry work for tmav on the side. when i&apos;m not coding i&apos;m probably reading
-              papers or losing at chess.
+              papers or playing volleyball.
             </p>
             <p className="font-mono text-sm text-muted-foreground/80">
               <span className="text-accent">$</span> whoami → builder, breaker, learner.
