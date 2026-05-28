@@ -19,7 +19,7 @@ const projectsData = [
     energy: 100,
     links: [
       { label: 'live', href: 'https://apexion.app', icon: Globe },
-      { label: 'github', href: 'https://github.com/ishan-barot', icon: GithubIcon },
+      { label: 'github', href: 'https://github.com/ishan-barot/apexion-app', icon: GithubIcon },
     ],
   },
   {
