@@ -1,7 +1,8 @@
 'use client'
 
-import { Bot, Sparkles, Terminal } from 'lucide-react'
+import { Bot, Globe, Sparkles, Terminal } from 'lucide-react'
 import RadialOrbitalTimeline from '@/components/ui/radial-orbital-timeline'
+import { GithubIcon } from '@/components/ui/brand-icons'
 import { SectionHeading } from './section-heading'
 
 const projectsData = [
@@ -16,6 +17,10 @@ const projectsData = [
     relatedIds: [2],
     status: 'in-progress' as const,
     energy: 100,
+    links: [
+      { label: 'live', href: 'https://apexion.app', icon: Globe },
+      { label: 'github', href: 'https://github.com/ishan-barot', icon: GithubIcon },
+    ],
   },
   {
     id: 2,
@@ -28,6 +33,13 @@ const projectsData = [
     relatedIds: [1, 3],
     status: 'in-progress' as const,
     energy: 75,
+    links: [
+      {
+        label: 'github',
+        href: 'https://github.com/ishan-barot/Code-Review-Bot',
+        icon: GithubIcon,
+      },
+    ],
   },
   {
     id: 3,
@@ -40,6 +52,13 @@ const projectsData = [
     relatedIds: [2],
     status: 'completed' as const,
     energy: 60,
+    links: [
+      {
+        label: 'github',
+        href: 'https://github.com/ishan-barot/StratusLite',
+        icon: GithubIcon,
+      },
+    ],
   },
 ]
 
@@ -51,7 +70,7 @@ export function ProjectsOrbital() {
           id="projects"
           index="03"
           title="projects"
-          subtitle="things i actually finished, mostly."
+          subtitle="things i actually finished, mostly. tap a node, then open."
         />
       </div>
 

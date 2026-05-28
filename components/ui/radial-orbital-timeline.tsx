@@ -1,12 +1,18 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import { ArrowRight, Link, Zap } from "lucide-react";
+import { ArrowRight, ExternalLink, Link, Zap } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
-interface TimelineItem {
+export interface TimelineLink {
+  label: string;
+  href: string;
+  icon?: React.ElementType;
+}
+
+export interface TimelineItem {
   id: number;
   title: string;
   date: string;
@@ -16,6 +22,7 @@ interface TimelineItem {
   relatedIds: number[];
   status: "completed" | "in-progress" | "pending";
   energy: number;
+  links?: TimelineLink[];
 }
 
 interface RadialOrbitalTimelineProps {
@@ -307,6 +314,42 @@ export default function RadialOrbitalTimeline({
                           ></div>
                         </div>
                       </div>
+
+                      {item.links && item.links.length > 0 && (
+                        <div className="mt-4 pt-3 border-t border-white/10">
+                          <div className="flex items-center mb-2">
+                            <ExternalLink size={10} className="text-white/70 mr-1" />
+                            <h4 className="text-[10px] uppercase tracking-wider font-medium text-white/70">
+                              open
+                            </h4>
+                          </div>
+                          <div className="flex flex-wrap gap-1.5">
+                            {item.links.map((link, idx) => {
+                              const LinkIcon = link.icon;
+                              const isPrimary = idx === 0;
+                              return (
+                                <a
+                                  key={link.href}
+                                  href={link.href}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  onClick={(e) => e.stopPropagation()}
+                                  className={cn(
+                                    "inline-flex items-center gap-1.5 h-7 px-2.5 rounded-sm text-[11px] font-mono lowercase tracking-wide transition-all",
+                                    isPrimary
+                                      ? "bg-white text-black hover:bg-white/90"
+                                      : "border border-white/30 bg-transparent text-white/80 hover:bg-white/10 hover:text-white"
+                                  )}
+                                >
+                                  {LinkIcon && <LinkIcon className="size-3" />}
+                                  {link.label}
+                                  <ExternalLink className="size-2.5 opacity-60" />
+                                </a>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      )}
 
                       {item.relatedIds.length > 0 && (
                         <div className="mt-4 pt-3 border-t border-white/10">
