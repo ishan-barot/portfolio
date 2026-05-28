@@ -60,7 +60,7 @@ export function Nav() {
           className="hidden sm:inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-2 text-xs font-mono text-foreground/90 hover:bg-muted hover:border-accent/40 transition-all"
         >
           <span className="size-1.5 rounded-full bg-accent animate-pulse" />
-          available for co-op '27
+          available for co-op &apos;27
         </a>
       </nav>
     </motion.header>
