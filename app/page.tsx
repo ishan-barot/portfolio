@@ -1,8 +1,8 @@
 import { Nav } from '@/components/sections/nav'
 import { Hero } from '@/components/sections/hero'
 import { About } from '@/components/sections/about'
-import { Experience } from '@/components/sections/experience'
-import { Projects } from '@/components/sections/projects'
+import { ExperienceOrbital } from '@/components/sections/experience-orbital'
+import { ProjectsOrbital } from '@/components/sections/projects-orbital'
 import { Stack } from '@/components/sections/stack'
 import { Contact } from '@/components/sections/contact'
 
@@ -12,8 +12,8 @@ export default function Home() {
       <Nav />
       <Hero />
       <About />
-      <Experience />
-      <Projects />
+      <ExperienceOrbital />
+      <ProjectsOrbital />
       <Stack />
       <Contact />
     </main>
