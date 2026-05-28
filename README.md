@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# portfolio
 
-## Getting Started
+my personal site, [ishanbarot.com](https://ishanbarot.com). dark, lowercase, mildly nerdy. built it because the old one was bugging me every time i opened it.
 
-First, run the development server:
+## stack
+
+- next.js 14 (app router) + typescript
+- tailwind for styling, shadcn-style component layout
+- framer-motion / motion for the scroll reveals and the timing on stuff
+- spline for the 3d scene in the hero
+- geist sans + mono
+- lucide for most icons, hand-rolled svgs for the brand ones (lucide v1 dropped them)
+
+## running it locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+then open [localhost:3000](http://localhost:3000). page hot reloads as you change things.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/            next.js routes, layout, favicons (icon.tsx + apple-icon.tsx)
+components/
+  sections/     the actual page sections (hero, work, projects, etc)
+  ui/           reusable bits (card, spotlight, spline wrapper, brand icons)
+lib/utils.ts    cn() helper
+```
 
-## Learn More
+most of the content lives in the section files. the bento grid for projects is in `components/sections/projects.tsx`, work history in `experience.tsx`. edit those.
 
-To learn more about Next.js, take a look at the following resources:
+## colors / theme
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+dark by default. accent is `#6488ea`. tokens live in `app/globals.css` and `tailwind.config.ts`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## deploy
 
-## Deploy on Vercel
+i run it on vercel. push to main, it picks up automatically. nothing fancy.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## credits
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- 3d scene from [spline](https://spline.design)
+- spotlight pattern adapted from aceternity
+- card scaffold from shadcn/ui
