@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { SplineScene } from '@/components/ui/splite'
+import { InteractivePortrait } from '@/components/ui/interactive-portrait'
 import { Spotlight } from '@/components/ui/spotlight'
 import { Card } from '@/components/ui/card'
 import { BackgroundPaths } from '@/components/ui/background-paths'
@@ -97,13 +97,10 @@ export function Hero() {
               </motion.div>
             </div>
 
-            <div className="flex-1 relative min-h-[280px] md:min-h-0">
-              <SplineScene
-                scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-                className="w-full h-full"
-              />
+            <div className="flex-1 relative min-h-[360px] md:min-h-0 py-8 md:py-0">
+              <InteractivePortrait />
               <div className="absolute top-4 right-4 font-mono text-[10px] text-muted-foreground/70 tracking-wider">
-                drag me ↻
+                drag me, hover me
               </div>
             </div>
           </div>
