@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { SplineScene } from '@/components/ui/splite'
 import { Spotlight } from '@/components/ui/spotlight'
 import { Card } from '@/components/ui/card'
+import { BackgroundPaths } from '@/components/ui/background-paths'
 import { ArrowDownRight, MapPin } from 'lucide-react'
 
 const fadeUp = {
@@ -18,9 +19,9 @@ const fadeUp = {
 export function Hero() {
   return (
     <section id="top" className="relative min-h-screen pt-28 pb-16 overflow-hidden">
-      <div className="absolute inset-0 grid-bg grid-bg-mask opacity-50 pointer-events-none" />
+      <BackgroundPaths />
 
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="relative z-10 mx-auto max-w-6xl px-6">
         <Card className="relative w-full min-h-[560px] md:min-h-[640px] bg-black/[0.96] border-border/60 overflow-hidden">
           <Spotlight
             className="-top-40 left-0 md:left-60 md:-top-20"
