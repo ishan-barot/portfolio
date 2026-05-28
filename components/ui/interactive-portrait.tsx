@@ -101,7 +101,7 @@ export function InteractivePortrait() {
         <div
           className="relative size-56 md:size-72 rounded-2xl overflow-hidden border border-white/15 shadow-[0_20px_60px_-15px_rgba(100,136,234,0.4)] bg-black/40"
           style={{
-            transform: 'translateZ(50px)',
+            transform: 'translateZ(0)',
             willChange: 'transform',
             backfaceVisibility: 'hidden',
           }}
@@ -123,9 +123,9 @@ export function InteractivePortrait() {
         </div>
 
         <div
-          className="absolute -bottom-3 -right-3 flex items-center gap-2 rounded-full bg-black border border-white/30 px-3 py-1.5 font-mono text-[12px] tracking-tight text-white lowercase pointer-events-none shadow-lg shadow-black/50"
+          className="absolute -bottom-3 -right-3 z-10 flex items-center gap-2 rounded-full bg-black border border-white/30 px-3 py-1.5 font-mono text-[12px] tracking-tight text-white lowercase pointer-events-none shadow-lg shadow-black/50"
           style={{
-            transform: 'translateZ(0)',
+            transform: 'translateZ(30px)',
             backfaceVisibility: 'visible',
             WebkitFontSmoothing: 'antialiased',
             textRendering: 'geometricPrecision',
